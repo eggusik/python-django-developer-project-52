@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-giorkxzaw5p7xfjke8vc9p6ley(k$-#$u6mfxh9*-@cupsz(t%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['webserver', '127.0.0.1', 'localhost', 'stanley-ajax-tm.onrender.com']
+ALLOWED_HOSTS = ['webserver', '127.0.0.1', 'localhost', 'eggus-todo.onrender.com']
 
 
 # Application definition
@@ -80,7 +81,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+DATABASES['default'] = dj_database_url.parse('postgres://mydb_dcgk_user:gHnbgKB0ZAVqviiTI0pmI9K96l8KP0cV@dpg-cn8c13qcn0vc738m3fb0-a.oregon-postgres.render.com/mydb_dcgk')
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
